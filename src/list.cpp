@@ -59,11 +59,13 @@ void List::delete_item() {
             cout << i << ": " << list[i] << "\n";
         }
         cout << "Enter index of item to delete: ";
+        
         int index;
         cin >> index;
-        if(std::size_t(index) >= 0 && std::size_t(index) < std::size_t(list.size())) {
-            list.erase(list.begin() + std::size_t(index));
-            cout << "\nItem deleted successfully!\n" << endl;
+
+        if(index >= 0 && static_cast<std::size_t>(index) < std::size_t(list.size())) {
+            list.erase(list.begin() + index);
+            cout << "\nItem deleted successfully!\n";
             print_list();
         }
             else {
@@ -77,7 +79,7 @@ void List::print_list() {
             cout << " * " << list[list_index] << endl;
         }
 
-        cout << "\nm - Menu \n";
+        cout << "\nM - Menu \n";
         char choice;
         cin >> choice;
 
@@ -87,7 +89,7 @@ void List::print_list() {
         }
         else {
             cout << "\n";
-            cout << "\nInvalid option, exiting!\n" << endl;
-            exit(0);
+            cout << "\nInvalid option, Retry!\n";
+            return;
         }
 }
