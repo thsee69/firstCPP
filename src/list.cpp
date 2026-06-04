@@ -26,7 +26,7 @@ void List::print_menu() {
     }
    else {
         cout << "\n";
-        cout << "Invalid option, Retry!" << endl;
+        cout << "Invalid option, Retry! \n";
         return;
         }
 }
@@ -42,7 +42,7 @@ void List::add_item() {
     
     list.push_back(item);
     cout << "\n";
-    cout << "\nItem added successfully!\n" << endl;
+    cout << "\nItem added successfully!\n";
     cin.clear();
     
     print_menu();
@@ -51,7 +51,7 @@ void List::add_item() {
 void List::delete_item() {
     cout << "\n** Delete Item **\n";
         if (list.empty()) {
-            cout << "\nList is empty!\n" << endl;
+            cout << "\nList is empty!\n";
             print_menu();
             return;
         }
@@ -69,14 +69,14 @@ void List::delete_item() {
             print_list();
         }
             else {
-                cout << "\nInvalid index, Retry!\n" << endl;
+                cout << "\nInvalid index, Retry!\n";
             }
 }
 
 void List::print_list() {
         cout << "\n** Print Item(s) **\n";
         for(std::size_t list_index = 0; list_index < list.size(); list_index++) {
-            cout << " * " << list[list_index] << endl;
+            cout << " * " << list[list_index] << " \n ";
         }
 
         cout << "\nM - Menu \n";
